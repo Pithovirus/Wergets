@@ -8,6 +8,7 @@ class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _MainAppState createState() => _MainAppState();
 }
 
@@ -16,7 +17,7 @@ class _MainAppState extends State<MainApp> {
 
   // Screens corresponding to each BottomNavigationBar item
   static final List<Widget> _pages = <Widget>[
-    HomeScreen(),
+    const HomeScreen(),
     const Text('Orders Page', style: TextStyle(fontSize: 25, color: Colors.black)),
     const Text('Profile Page', style: TextStyle(fontSize: 25, color: Colors.black)),
   ];
@@ -33,10 +34,10 @@ class _MainAppState extends State<MainApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             "Maur's Bakery",
             style: TextStyle(
-              color: const Color.fromARGB(200, 206, 83, 7),
+              color: Color.fromARGB(200, 206, 83, 7),
               fontSize: 16,
             ),
           ),
@@ -47,9 +48,12 @@ class _MainAppState extends State<MainApp> {
             preferredSize: const Size.fromHeight(4.0),
             child: Container(
               color:  const Color.fromARGB(200, 206, 83, 7),
+              
               height: 0.5,
+              
             ),
             ),
+            foregroundColor: const Color.fromARGB(255, 245, 245, 245),
 
         ),
 
@@ -58,6 +62,7 @@ class _MainAppState extends State<MainApp> {
 
         // Adding the BottomNavigationBar
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: const Color.fromARGB(255, 245, 245, 245),
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -83,6 +88,8 @@ class _MainAppState extends State<MainApp> {
 
 // Home screen page with menu images
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final List<Map<String, String>> menuImages = [
@@ -111,7 +118,7 @@ class HomeScreen extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Container(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         color: const Color.fromARGB(255, 245, 245, 245),
         child: Column(
           children: [
@@ -125,7 +132,7 @@ class HomeScreen extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            Container(
+            SizedBox(
               height: 270,
               width: 500,
               child: SizedBox(
