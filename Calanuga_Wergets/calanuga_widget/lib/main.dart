@@ -57,6 +57,7 @@ class _HomePageState extends State<HomePage> {
           Navigator.pop(context);
         },
       ),
+
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const [
@@ -69,15 +70,23 @@ class _HomePageState extends State<HomePage> {
             label: 'Best Sellers',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.cloud_download),
+            label: 'Offline Books',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'Purchased Books',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.star),
             label: 'Popular Books',
           ),
         ],
+
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         selectedItemColor: Colors.black, 
-        unselectedItemColor: Colors.white, 
-        backgroundColor:  Colors.brown, 
+        unselectedItemColor:Colors.brown, 
       ),
     );
   }
@@ -690,6 +699,7 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
           ),
+          
           ListTile(
             leading: const Icon(Icons.home),
             title: const Text('Home'),
