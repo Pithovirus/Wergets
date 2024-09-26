@@ -1,4 +1,4 @@
-# relaxing_music_app
+# roulette_app
 
 A new Flutter project.
 
